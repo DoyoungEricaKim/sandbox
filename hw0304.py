@@ -24,18 +24,19 @@ def end_result():   # 몇 번만에 맞췄는지 결과 알림이
         print(str(count) + "번 만에 맞추시다니, 찍기에 소질이 없으시군요!")
 
 
-print("안녕.\n난 100부터 999 중 숫자 하나를 골랐어요.")
-guess = int(input("뭔지 쓰고 엔터 키를 누르세요."))
 count += 1  # guess를 하나 받을 때 마다 count를 하나씩 올려줌.
+guess = int(input("Trial #" + str(count) + ". Your guess? "))
 
 result = compare(com_num, guess)
 
-while result != 2:
+while result != 2:  # 맞추지 못했다면
     count += 1
     if result == 0:
-        guess = int(input("Up"))
+        print("Up!\n")
+        guess = int(input("Trial #" + str(count) + ". Your guess? "))
     else:
-        guess = int(input("Down"))
+        print("Down!\n")
+        guess = int(input("Trial #" + str(count) + ". Your guess? "))
 
     result = compare(com_num, guess)
 
