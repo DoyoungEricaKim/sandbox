@@ -10,7 +10,6 @@ def pick_quiz():
     nums.remove(b)
     c = nums[random.randint(0, len(nums) - 1)]
     quiz = str(a) + str(b) + str(c)
-    print(quiz)
     return quiz
 
 
